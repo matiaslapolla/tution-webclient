@@ -1,15 +1,14 @@
-import "./globals.css"
+import "./globals.css";
 
 export const metadata = {
-	title: "Sidequix",
-	description: "Find the best side hustles for you",
+	title: "Tution",
+	description: "El lugar de Tu Tienda Online",
 };
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
+		<html lang="es">
 			<body>{children}</body>
 		</html>
 	);
 }
- 
