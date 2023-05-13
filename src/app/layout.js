@@ -1,3 +1,4 @@
+import AppRouter from "./components/app-router";
 import "./globals.css";
 
 export const metadata = {
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="es">
-			<body>{children}</body>
+			<body>
+				<AppRouter />
+				{children}
+			</body>
 		</html>
 	);
 }
