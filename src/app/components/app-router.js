@@ -1,38 +1,45 @@
 import Link from "next/link";
+import CustomLinkButton from "./atoms/link-button";
+
+const routes = [
+  {
+    path: "/home",
+    displayText: "Home",
+  },
+  {
+    path: "/register",
+    displayText: "Register",
+  },
+  {
+    path: "/login",
+    displayText: "Login",
+  },
+  {
+    path: "/logout",
+    displayText: "Logout",
+  },
+];
 
 const AppRouter = () => {
-	return (
-		<>
-			<div>
-				<div className="">
-					<ul>
-						<li className="">
-							<Link className="" href="/home">
-								Home
-							</Link>
-						</li>
-						<li>
-							<Link className="" href="/jobs">
-								Jobs
-							</Link>
-						</li>
-						<li>
-							<Link className="" href="/login">
-								Login
-							</Link>
-						</li>
-					</ul>
-					<ul>
-						<li>
-							<Link className="" href="/register">
-								Register
-							</Link>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div>
+        <div className="flex justify-between">
+          <div className="w-2/3" />
+          <ul className="flex w-1/3 justify-around ">
+            {routes.map((route) => (
+              <li key={route.path}>
+                <CustomLinkButton
+                  route={route.path}
+                  linkText={route.displayText}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default AppRouter;
